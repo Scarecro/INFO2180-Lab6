@@ -12,15 +12,15 @@ $(function(){
           method: "GET"
       }).done(function(response) {
           console.log('done');
-          alert(response);
+          //alert(response);
           $(result).html(response);
       }).fail(function() {
           console.log('fail');
-          $(result).html("There was a problem with your request. ");
+          $(result).html("<p>There was a problem with your request.</p>");
       });   
     }
     else { 
-      $(result).html("Please enter a word. ");
+      $(result).html("<p>Please enter a word.</p>");
 
     }
   });
@@ -33,7 +33,7 @@ $(function(){
       method: "GET"
     }).done(function(response) {
       console.log('done');
-      alert(response);
+      //alert(response);
 
       var myxml = $.parseXML(response);
       $(myxml).find('definition').each(function (index, item) {
@@ -42,7 +42,7 @@ $(function(){
       $(result).html(output);
     }).fail(function() {
       console.log('fail');
-      $(result).html("There was a problem with your request. ");
+      $(result).html("<p>There was a problem with your request.</p>");
     }); 
   });
 
